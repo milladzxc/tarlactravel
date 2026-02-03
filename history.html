@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarlac History Diorama | Tarlac Travel</title>
+
+    <!-- Single image favicon (works with most browsers) -->
+    <link rel="icon" href="images/tarlac-logo.jpg" type="image/jpg">
+    
+    <!-- For iOS devices -->
+    <link rel="apple-touch-icon" href="images/tarlac-logo.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #8B4513;
+            --accent: #D4A76A;
+            --light: #f5f1e8;
+            --dark: #2c3e50;
+            --text: #4a3c31;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Page Load Animation */
+        body {
+            opacity: 0;
+            animation: fadeInPage 0.5s ease forwards;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--secondary);
+            background: none;
+            border: none;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-toggle:hover {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            transition: var(--transition);
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: var(--secondary);
+        }
+        
+        nav ul li a.active:after {
+            width: 100%;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            box-shadow: var(--shadow);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        /* Diorama Hero Section */
+        .diorama-hero {
+            background: 
+                linear-gradient(rgba(44, 62, 80, 0.85), rgba(139, 69, 19, 0.8)),
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .diorama-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23D4A76A" stroke-width="0.5" opacity="0.3"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .diorama-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+            animation: fadeInUp 0.7s ease forwards;
+        }
+        
+        .diorama-hero p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            animation: fadeInUp 0.7s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Diorama Introduction */
+        .diorama-intro {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .diorama-intro:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--light);
+            transform: skewY(-2deg);
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .intro-text h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .intro-text h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .intro-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* Updated: Overlapping Images Container */
+        .diorama-images-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+        
+        .diorama-image-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 85%;
+            height: 85%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transform: rotate(-3deg);
+            transition: var(--transition);
+            z-index: 2;
+            cursor: pointer;
+        }
+        
+        .diorama-image-secondary {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transform: rotate(4deg);
+            transition: var(--transition);
+            z-index: 1;
+            cursor: pointer;
+        }
+        
+        .diorama-image-main:hover {
+            transform: rotate(0deg) scale(1.02);
+            z-index: 3;
+        }
+        
+        .diorama-image-secondary:hover {
+            transform: rotate(0deg) scale(1.02);
+            z-index: 3;
+        }
+        
+        .diorama-image-main img,
+        .diorama-image-secondary img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .diorama-image-main:hover img,
+        .diorama-image-secondary:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Image Modal */
+        .image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .image-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        /* NEW: Historical Timeline Section - Text-Left, Image-Right Layout */
+        .historical-timeline {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .historical-timeline:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            transform: skewY(3deg);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Timeline Items Layout - Similar to intro-content */
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(even) {
+            direction: rtl; /* This makes even items have text on right, image on left */
+        }
+        
+        .timeline-item:nth-child(even) .timeline-text {
+            direction: ltr; /* Reset text direction for content */
+        }
+        
+        .timeline-text {
+            padding: 20px;
+        }
+        
+        /* NEW: Timeline Dates Container for Multiple Dates */
+        .timeline-dates {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+        
+        .timeline-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .timeline-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .image-counter {
+            display: inline-block;
+            background: rgba(212, 167, 106, 0.2);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .timeline-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transition: var(--transition);
+            height: 350px;
+        }
+        
+        .timeline-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .timeline-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Origin of Tarlac */
+
+        .timeline-origin {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transition: var(--transition);
+            height: 700px;
+        }
+        
+        .timeline-origin:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-origin img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .timeline-origin:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Paniqui Assembly */
+
+        .timeline-paniqui {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transition: var(--transition);
+            height: 700px;
+        }
+        
+        .timeline-paniqui:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-paniqui img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .timeline-paniqui:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Macabulos */
+        
+        .timeline-macabulos {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transition: var(--transition);
+            height: 700px;
+        }
+        
+        .timeline-macabulos:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-macabulos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .timeline-macabulos:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Cristina*/
+
+        .timeline-cristina {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid white;
+            transition: var(--transition);
+            height: 700px;
+        }
+        
+        .timeline-cristina:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-cristina img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .timeline-cristina:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Historical Figures */
+        .historical-figures {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .figures-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .figure-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--secondary);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .figure-card:nth-child(1) { animation-delay: 0.1s; }
+        .figure-card:nth-child(2) { animation-delay: 0.2s; }
+        .figure-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .figure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .figure-image {
+            height: 550px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .figure-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: var(--transition);
+        }
+        
+        .figure-card:hover .figure-image img {
+            transform: scale(1.05);
+        }
+        
+        .figure-content {
+            padding: 25px;
+        }
+        
+        .figure-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .figure-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        /* Visit Info */
+        .visit-info {
+            padding: 80px 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .visit-card {
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent);
+            transition: var(--transition);
+        }
+        
+        .visit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .visit-card h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .visit-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .detail-item {
+            text-align: left;
+            padding: 20px;
+            background: rgba(212, 167, 106, 0.1);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-3px);
+            background: rgba(212, 167, 106, 0.2);
+        }
+        
+        .detail-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+            border-top: 5px solid var(--accent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section ul li a:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                direction: ltr; /* Reset direction on mobile */
+            }
+            
+            .diorama-images-container {
+                max-width: 600px;
+                margin: 0 auto;
+                height: 350px;
+                order: -1;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .diorama-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .diorama-hero p {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-image {
+                height: 300px;
+                order: -1;
+            }
+            
+            .figure-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            .diorama-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .diorama-hero p {
+                font-size: 1.3rem;
+            }
+            
+            .diorama-images-container {
+                height: 300px;
+            }
+            
+            .visit-card {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .intro-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .timeline-text h3 {
+                font-size: 1.6rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+            
+            .timeline-image {
+                height: 250px;
+            }
+            
+            .figure-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .diorama-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .diorama-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .figures-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .diorama-images-container {
+                height: 250px;
+            }
+            
+            .diorama-image-main,
+            .diorama-image-secondary,
+            .timeline-image {
+                border-width: 5px;
+            }
+            
+            .visit-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .timeline-date {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            
+            .timeline-image {
+                height: 200px;
+            }
+            
+            .figure-image {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .diorama-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .diorama-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .diorama-hero p {
+                font-size: 1rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+            
+            .timeline-item {
+                margin-bottom: 60px;
+            }
+            
+            .timeline-image {
+                height: 180px;
+            }
+            
+            .figure-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-content">
+            <img src="" alt="Enlarged Diorama View" id="modalImage">
+            <div class="modal-close" id="modalClose">&times;</div>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fas fa-landmark"></i>Tarlac History</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html" class="active">History Diorama</a></li>
+                    <li><a href="cities.html">Municipalities</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="services.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <main>
+        <section class="diorama-hero">
+            <div class="container">
+                <h1>Tarlac History Diorama</h1>
+                <p>Step into the past and witness the rich historical tapestry of Tarlac</p>
+            </div>
+        </section>
+
+        <section class="diorama-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>The Living History of Tarlac</h2>
+                        <p>The Tarlac History Diorama is an immersive journey through time, showcasing the pivotal moments that shaped the province into what it is today. From its pre-colonial roots to its role in the Philippine Revolution, each exhibit tells a story of resilience, culture, and progress.</p>
+                        <p>This carefully curated collection features detailed miniature scenes, authentic artifacts, and interactive displays that bring to life the significant events and figures that defined Tarlac's unique identity as the "Melting Pot of Central Luzon."</p>
+                        <p>Walk through centuries of history in a single visit, experiencing the convergence of Kapampangan, Ilocano, and Pangasinense cultures that created Tarlac's distinctive heritage.</p>
+                    </div>
+                    <div class="diorama-images-container">
+                        <!-- Main Image -->
+                        <div class="diorama-image-main" id="mainImage">
+                            <img src="/images/Dioarama1.JPG" alt="Tarlac History Diorama Main Exhibit">
+                        </div>
+                        
+                        <!-- Secondary Image -->
+                        <div class="diorama-image-secondary" id="secondaryImage">
+                            <img src="/images/Dioarama2.JPG" alt="Tarlac History Diorama Detailed View">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Historical Timeline Section - Text-Left, Image-Right Layout -->
+        <section id="timeline" class="historical-timeline">
+            <div class="container">
+                <h2 class="section-title">Historical Timeline of Tarlac</h2>
+                
+                <!-- Late 1800s -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">Late 1800s</span>
+                        </div>
+                        <h3>Origin of the Name "Tarlac"</h3>
+                        <p>An old Spanish Tagalog Dictionary by Pedro Serrano Laktaw in the late 1800s referred to 'Tarlac' as native sugar cane. Early documents referred to the place as a marshland rather than a plant, which is more feasible as it had its application in other parts of the Philippines.</p>
+                    </div>
+                    <div class="timeline-origin">
+                        <img src="images/history7.webp" alt="Spanish Dictionary">
+                    </div>
+                </div>
+                
+                <!-- Early Evangelization -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">1571 Onwards</span>
+                        </div>
+                        <h3>Spanish Evangelization Period</h3>
+                        <p>Even with the initialization of the period of evangelization and reduccion of Pampanga in 1571 and Pangasinan a couple of years later, however, most of what was to become the province of central portion, was for at least two centuries depicted as thickly-forested hinterland, peopled by roving tribes of Aetas.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="/images/history8.PNG" alt="Spanish Evangelization">
+                    </div>
+                </div>
+                
+                <!-- 1850s -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">1850s</span>
+                        </div>
+                        <h3>Comandancia Politico-Militar de Tarlac</h3>
+                        <p>The first step towards the erection of Tarlac into a province was made in 1858, with the creation of the Comandancia Politico-Militar de Tarlac. Based on the actual law, when the Commandancia de Armas de Tarlac (another term for Commandancia Politico-Militar de Tarlac) was conceived in 1857, with the appointment of Capt. Sebastian Hernandez as the first Comandante and the Royal Decree that credited it on 30 August 1858, it was already the formation of the territory that compromised almost in its entirety what was then and still now the Tarlac Province.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history 9.PNG" alt="Military Command">
+                    </div>
+                </div>
+                
+                <!-- May 24, 1893 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">May 24, 1893</span>
+                        </div>
+                        <h3>Gobierno de Tarlac Established</h3>
+                        <p>The Gobierno de Tarlac was created, with Don Antonio Rodriguez Batista serving as the first civil governor.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history1.PNG" alt="Civil Government">
+                    </div>
+                </div>
+                
+                <!-- August 30, 1896 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">August 30, 1896</span>
+                        </div>
+                        <h3>Tarlac in the Philippine Revolution</h3>
+                        <p>Tarlac was included among the eight revolting provinces by Governor-General Ramon Blanco, immortalized as among the eight rays of the sun in the Philippine flag.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history2.PNG" alt="Philippine Flag">
+                    </div>
+                </div>
+                
+                <!-- January 24, 1897 AND April 17, 1898 - SINGLE ITEM WITH ONE PICTURE -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">January 24, 1897</span>
+                            <span class="timeline-date">April 17, 1898</span>
+                        </div>
+                        <h3>Macabulos Revolutionary Activities</h3>
+                        <p><strong>January 24, 1897:</strong> The so-called 'First City of Tarlac' initiated by General Francisco S. Macabulos in La Paz.</p>
+                        <p><strong>April 17, 1898:</strong> General Francisco Macabulos installed the Central Comite Directivo del Centro Y Norte de Luzon, with headquarters at Lomboy, La Paz, Tarlac; with its own constitution, the so called 'Macabulos Constitution'.</p>
+                    </div>
+                    <div class="timeline-macabulos">
+                        <img src="images/history3.PNG" alt="Revolutionary Government">
+                    </div>
+                </div>
+                
+                <!-- June 6, 1899 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">June 6, 1899</span>
+                        </div>
+                        <h3>Aguinaldo's Capital in Tarlac</h3>
+                        <p>President Emilio Aguinaldo transferred his capital at Bamban, Tarlac, assuming the position of Captain-General. By June 21, he relocated at the Tarlac cabecera.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history4.PNG" alt="Aguinaldo Capital">
+                    </div>
+                </div>
+                
+                <!-- July 14, 1899 AND August 8, 1899 - SINGLE ITEM WITH ONE PICTURE -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">July 14, 1899</span>
+                            <span class="timeline-date">August 8, 1899</span>
+                        </div>
+                        <h3>Tarlac as Educational and Political Center</h3>
+                        <p><strong>July 14, 1899:</strong> The Congress of the First Philippine Republic was reconvened at the Tarlac Cathedral with Ambrosio Rianzares Bautista as the President.</p>
+                        <p><strong>August 8, 1899:</strong> The Universidad Literaria de Filipinas was reopened in Tarlac, with Dr. Leon Ma Guerrero as its Rector. On September 29, 1899, it held its first and only graduation ceremony.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history5.PNG" alt="Tarlac Cathedral">
+                    </div>
+                </div>
+                
+                <!-- October 23, 1899 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">October 23, 1899</span>
+                        </div>
+                        <h3>Paniqui Assembly</h3>
+                        <p>Msgr. Gregorio Aglipay convened the so-called Paniqui Assembly, marking the seed of what would become the Philippine Independent Church.</p>
+                    </div>
+                    <div class="timeline-paniqui">
+                        <img src="images/history6.PNG" alt="Paniqui Assembly">
+                    </div>
+                </div>
+                
+                <!-- 1953 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">1953</span>
+                        </div>
+                        <h3>First Tarlaquena Beauty Queen</h3>
+                        <p>Tarlac native, Maria Cristina Galang won at the Philippines International Fair as Miss Philippines in 1953. The Maria Cristina Park in front of the capitol building was named after the first Tarlaquena beauty queen.</p>
+                    </div>
+                    <div class="timeline-cristina">
+                        <img src="images/history12.jpg" alt="Maria Cristina Galang">
+                    </div>
+                </div>
+                
+                <!-- 1982 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">1982</span>
+                        </div>
+                        <h3>Diwa ng Tarlac Construction</h3>
+                        <p>The Diwa ng Tarlac was constructed by the administration of then Governor Homobono Sawit, which was set as the civic center of the province.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history13.PNG" alt="Diwa ng Tarlac">
+                    </div>
+                </div>
+                
+                <!-- 1988 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">1988</span>
+                        </div>
+                        <h3>Creation of San Jose Municipality</h3>
+                        <p>Creation of the Municipality of San Jose in Western Tarlac.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history14.PNG" alt="San Jose Municipality">
+                    </div>
+                </div>
+                
+                <!-- June 15, 1991 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">June 15, 1991</span>
+                        </div>
+                        <h3>Mt. Pinatubo Eruption</h3>
+                        <p>Mt. Pinatubo explosion where more than 800 people died mostly from collapsing roofs. And more than two million people whose houses and livehood were either damaged and/or destroyed.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history15.PNG" alt="Mt. Pinatubo">
+                    </div>
+                </div>
+                
+                <!-- April 12, 2004 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">April 12, 2004</span>
+                        </div>
+                        <h3>Monasterio de Tarlac Eco-Tourism Park</h3>
+                        <p>Then Governor Jose "Aping" Yap, through former President Gloria Macapagal Arroyo issued Proclamation number 602 "Declaring as Eco-Tourism Park and Campsite a 278 hectare land in Brgy. Lubigan and Moriones in the town of San Jose. The Eco-Tourism Park is now known for the famous Monasterio De Tarlac.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history16.PNG" alt="Monasterio de Tarlac">
+                    </div>
+                </div>
+                
+                <!-- April 2010 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">April 2010</span>
+                        </div>
+                        <h3>First Palarong Pambansa in Tarlac</h3>
+                        <p>The province of Tarlac hosted its first Palarong Pambansa at the newly constructed Tarlac Recreational Park, now known as the Jose V. Yap Sports and Recreational Complex under the administration of then Governor Victor Yap.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history17.PNG" alt="Palarong Pambansa">
+                    </div>
+                </div>
+                
+                <!-- 2019 -->
+                <div class="timeline-item">
+                    <div class="timeline-text">
+                        <div class="timeline-dates">
+                            <span class="timeline-date">2019</span>
+                        </div>
+                        <h3>SEA Games Host in New Clark City</h3>
+                        <p>The province of Tarlac hosted its first Southeast Asian Games at the New Clark City Sports Complex in Capas, Tarlac.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/history18.PNG" alt="SEA Games">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="historical-figures">
+            <div class="container">
+                <h2 class="section-title">Key Historical Figures</h2>
+                <div class="figures-container">
+                    <div class="figure-card">
+                        <div class="figure-image">
+                            <img src="/images/francisco.jpg" alt="General Francisco Makabulos">
+                        </div>
+                        <div class="figure-content">
+                            <h3>Gen. Francisco Makabulos</h3>
+                            <div class="figure-role">Revolutionary Leader</div>
+                            <p>A key figure in the Philippine Revolution against Spain, Makabulos was a native of La Paz, Tarlac. He led revolutionary forces in Central Luzon and established a provisional government in Tarlac.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-card">
+                        <div class="figure-image">
+                            <img src="/images/corazon.jpg" alt="President Corazon Aquino">
+                        </div>
+                        <div class="figure-content">
+                            <h3>Corazon Aquino</h3>
+                            <div class="figure-role">11th President of the Philippines</div>
+                            <p>Born in Tarlac, Aquino became the first female president of the Philippines and the first female president in Asia. Her presidency marked the restoration of democracy after the Marcos regime.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-card">
+                        <div class="figure-image">
+                            <img src="/images/benigno.jpg" alt="Benigno Aquino Jr.">
+                        </div>
+                        <div class="figure-content">
+                            <h3>Benigno "Ninoy" Aquino Jr.</h3>
+                            <div class="figure-role">Senator & Democracy Icon</div>
+                            <p>A native of Concepcion, Tarlac, Aquino was a leading opposition figure during the Marcos regime. His assassination in 1983 sparked the People Power Revolution that eventually toppled the dictatorship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit-info">
+            <div class="container">
+                <div class="visit-card">
+                    <h2>Visit the Tarlac History Diorama</h2>
+                    <p>Experience history come alive at the Tarlac Provincial Museum and History Diorama. Located in the heart of Tarlac City, this immersive exhibit is open to visitors of all ages.</p>
+                    
+                    <div class="visit-details">
+                        <div class="detail-item">
+                            <h4><i class="fas fa-clock"></i> Operating Hours</h4>
+                            <p>Monday to Sunday: 8:00 AM - 5:00 PM</p>
+                            <p>Closed on holidays</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                            <p>Diwa ng Tarlac</p>
+                            <p>9 Romulo Blvd, Tarlac City, 2300 Tarlac</p>
+                        </div>
+                    </div>
+                    
+                    <a href="services.html" class="btn">Plan Your Visit</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tarlac History Diorama</h3>
+                    <p>Preserving the rich historical heritage of Tarlac for future generations. Experience the journey through time at our immersive diorama exhibit.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/tarlactourism" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="history.html">History Diorama</a></li>
+                        <li><a href="cities.html">Municipalities</a></li>
+                        <li><a href="attractions.html">Attractions</a></li>
+                        <li><a href="services.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 9 Romulo Blvd, Tarlac City, 2300 Tarlac</p>
+                    <p><i class="fas fa-phone"></i> 0999-889-3869</p>
+                    <p><i class="fas fa-envelope"></i> ksaborboro@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Tarlac Provincial History Diorama. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const backToTop = document.getElementById('backToTop');
+        const header = document.getElementById('header');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const figureCards = document.querySelectorAll('.figure-card');
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.getElementById('modalClose');
+        const mainImage = document.getElementById('mainImage');
+        const secondaryImage = document.getElementById('secondaryImage');
+        const currentYear = document.getElementById('currentYear');
+
+        // Mobile Menu Toggle
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.textContent = '☰';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Timeline and Figure cards animation
+        function checkCards() {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            
+            [...timelineItems, ...figureCards].forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                
+                if (cardTop < triggerBottom) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCards);
+        window.addEventListener('load', checkCards);
+
+        // Image Modal functionality
+        function openModal(imageSrc) {
+            modalImage.src = imageSrc;
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        mainImage.addEventListener('click', () => {
+            openModal('/images/Dioarama1.JPG');
+        });
+
+        secondaryImage.addEventListener('click', () => {
+            openModal('/images/Dioarama2.JPG');
+        });
+
+        modalClose.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside the image
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Set current year in footer
+        currentYear.textContent = new Date().getFullYear();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Performance optimization: Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                checkCards();
+            }, 100);
+        });
+
+        // Add loading state to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (!this.href.includes('#')) { // Only for external links
+                    e.preventDefault();
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 1000);
+                }
+            });
+        });
+
+        // Touch device detection
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        if (isTouchDevice) {
+            document.body.classList.add('touch-device');
+        }
+
+        // Initialize all cards as visible on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                [...timelineItems, ...figureCards].forEach(card => {
+                    card.classList.add('visible');
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
